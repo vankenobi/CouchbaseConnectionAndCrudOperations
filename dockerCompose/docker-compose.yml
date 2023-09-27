@@ -1,0 +1,14 @@
+version: '1.0'
+services:
+  couchbase:
+    image: couchbase:latest
+    container_name: my-couchbase
+    ports:
+    - 8091:8091   # Web arayüzü için
+    - 8092:8092   # Görüntüleme için
+    - 8093:8093   # İndeksleme için
+    - 8094:8094   # İndeksleme için
+    - 11210:11210 # Görüntüleme için
+    environment:
+      - COUCHBASE_ADMINISTRATOR_USERNAME=admin
+      - COUCHBASE_ADMINISTRATOR_PASSWORD=admin
